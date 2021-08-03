@@ -1,0 +1,10 @@
+a {
+    color: #ffffff !important;
+}
+
+.form-select,
+.start {
+    width: 200px !important;
+    margin-right: 20px;
+}
+
