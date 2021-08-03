@@ -1,0 +1,16 @@
+.container-fluid {
+    background-color: #cccccc;
+    height: 100vh;
+}
+
+.form-select,
+.start {
+    width: 200px !important;
+    margin-right: 20px;
+}
+
+.center {
+    padding: 100px;
+    display: grid;
+    place-items: center;
+}
