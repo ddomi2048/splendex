@@ -35,34 +35,32 @@ export class GameComponent implements OnInit {
       this.flippedCards.pop();
     }
 
-    setTimeout(() => {
-      if (this.flippedCards.length === 2) {
-        this.check();
-      }
-    }, 300);
-    
+    if (this.flippedCards.length === 2) {
+      this.check();
+    }
   }
 
   check() {
-    if (this.flippedCards[0].imgSrc === this.flippedCards[1].imgSrc) {
-      this.flippedCards[0].state = 'matched';
-      this.flippedCards[1].state = 'matched';
-      this.matched++;
-      this.flippedCards = [];
-    } else {
-      this.flippedCards[0].state = 'default';
-      this.flippedCards[1].state = 'default';
-      this.flippedCards = [];
-    }
+    setTimeout(() => {
+      if (this.flippedCards[0].imgSrc === this.flippedCards[1].imgSrc) {
+        this.flippedCards[0].state = 'matched';
+        this.flippedCards[1].state = 'matched';
+        this.matched++;
+        this.flippedCards = [];
+      } else {
+        this.flippedCards[0].state = 'default';
+        this.flippedCards[1].state = 'default';
+        this.flippedCards = [];
+      }
 
-    this.tries++;
+      this.tries++;
 
-    if (this.matched === this.gameService.num) {
-      alert('Congratulations! You won!');
-      this.tries = 0;
-      this.matched = 0;
-    }
-
+      if (this.matched === this.gameService.num) {
+        alert('Congratulations! You won!');
+        this.tries = 0;
+        this.matched = 0;
+      }
+    }, 1000);
   }
 
 }
