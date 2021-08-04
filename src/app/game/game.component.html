@@ -1,3 +1,13 @@
-<div class="container-fluid">
-    
+<div class="container-fluid h-100">
+    <div class="row justify-content-center">
+        <div *ngFor="let card of this.gameService.shuffled" class="col-sm-6 col-md-3">
+            <div *ngIf="card.state !== 'matched'">
+                <div (click)='flip(card.id)' class="card my-1" style="width: 120px; height: 120px;">
+                    <div *ngIf="card.state === 'flipped'">
+                        <img [src]="card.imgSrc" class="card-img-top" alt="card">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

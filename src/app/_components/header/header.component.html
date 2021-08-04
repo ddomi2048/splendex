@@ -13,8 +13,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item my-2">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Number of pairs</option>
+                        <select [(ngModel)]="selectedNum" class="form-select" aria-label="Default select example">
+                            <option value='0' selected>Number of pairs</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
@@ -26,7 +26,7 @@
                         </select>
                     </li>
                     <li class="nav-item my-2">
-                        <button routerLink="/game" type="button" class="start btn btn-danger">START NEW GAME</button>
+                        <button (click)='this.start()' routerLink="/game" type="button" class="start btn btn-danger">START NEW GAME</button>
                     </li>
                 </ul>
             </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GameService } from 'src/app/_services/game.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,16 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, public gameService: GameService) { }
 
 
-  url: string = ''
+  url: string = '';
+  selectedNum: string = '';
+  num: number = parseInt(this.selectedNum);
 
   ngOnInit(): void {
       this.display();
+      this.selectedNum = '0';
   }
 
   display() {
@@ -28,4 +32,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  start() {
+    let num: number = parseInt(this.selectedNum);
+    this.gameService.generateCards(num);
+  }
 }
