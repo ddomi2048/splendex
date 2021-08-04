@@ -5,31 +5,32 @@
                 class="d-inline-block align-text-top">
             splendex
         </a>
-        <div *ngIf="display()">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item my-2">
-                        <select [(ngModel)]="selectedNum" class="form-select" aria-label="Default select example">
-                            <option value='0' selected>Number of pairs</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </li>
-                    <li class="nav-item my-2">
-                        <button (click)='this.start()' routerLink="/game" type="button" class="start btn btn-danger">START NEW GAME</button>
-                    </li>
-                </ul>
-            </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div *ngIf="display()" class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item my-2">
+                    <select [(ngModel)]="selectedNum" class="form-select" aria-label="Default select example">
+                        <option value='0' selected>Number of pairs</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+                <li class="nav-item my-2">
+                    <button (click)='this.start()' routerLink="/game" type="button" class="start btn btn-danger">START
+                        NEW GAME</button>
+                </li>
+            </ul>
         </div>
+
     </div>
 </nav>
